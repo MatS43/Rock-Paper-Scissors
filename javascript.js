@@ -11,5 +11,8 @@ function getComputerChoice(){
     }
 
 }
-
+function getHumanChoice(){
+    let answer = prompt("Rock, Paper or Scissors").toLowerCase();
+    return answer;
+}
 
