@@ -15,6 +15,7 @@ function getHumanChoice(){
     let answer = prompt("Rock, Paper or Scissors").toLowerCase();
     return answer;
 }
+function playGame(){
 let humanScore = 0;
 let computerScore = 0;
 function playRound(humanChoice, computerChoice){
@@ -28,6 +29,18 @@ function playRound(humanChoice, computerChoice){
         ++computerScore;
     }
 }
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-playRound(humanChoice, computerChoice);
+    let round = 0;
+    while(round < 5){
+    playRound(getHumanChoice(), getComputerChoice());
+    ++round;
+    console.log(`Your score is ${humanScore}`);
+    console.log(`Computer score is ${computerScore}`);
+    }
+    if (humanScore>computerScore){
+        console.log("You won the game!")
+    } else if (computerScore>humanScore){
+        console.log("You lost the game!")
+    } else {
+        console.log("You tied with the computer!")
+    }
+}
